@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: reference-new.html 
+keywords: 'what"s new, new, features, release notes, enhancements' 
+summary: Neue Versionen von Cloud Volumes ONTAP führen neue Funktionen, Verbesserungen und Bugfixes ein. 
+---
+= Was ist neu in Cloud Volumes ONTAP 9.4
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 9.4 enthält mehrere neue Funktionen und Verbesserungen.
+
+
+NOTE: Zusätzliche Funktionen und Verbesserungen sind auch in den neuesten Versionen von Cloud Manager eingeführt. Siehe https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Versionshinweise Zu Cloud Manager"^] Entsprechende Details.
+
+
+
+== Unterstützung für nutzungsbasierte Abrechnung in der AWS GovCloud (USA) Region
+
+Die nutzungsbasierte Version von Cloud Volumes ONTAP wird jetzt in der AWS GovCloud (US)-Region unterstützt. Dies gilt zusätzlich zur Unterstützung von Cloud Volumes ONTAP Byol in der Region GovCloud (USA).
+
+Sie können Cloud Volumes ONTAP wie jede andere Region in der Region GovCloud (USA) implementieren. Rufen Sie NetApp Cloud Central auf, und starten Sie Cloud Manager in GovCloud (USA). Starten Sie dann Cloud Volumes ONTAP PayGo oder Byol, indem Sie eine neue Arbeitsumgebung in Cloud Manager erstellen.
+
+
+
+== Tiering selten genutzter Daten mit Cloud Volumes ONTAP Premium und BYOL
+
+In Version 9.2 wurde automatisiertes Daten-Tiering zwischen einer Performance-Tier (SSD oder HDD) und einer Kapazitäts-Tier (einem Objektspeicher) eingeführt. Die an die Kapazitäts-Tier gesendeten Daten umfassten Snapshot Kopien von Lese- und Schreibvorgängen (die Tiering-Richtlinie „_nur Snapshot_“) oder Daten aus Ziel-Volumes (die Richtlinie „_Backup_ Tiering“).
+
+Mit Cloud Volumes ONTAP 9.4 Premium und BYOL steht Ihnen nun eine dritte Option zur Verfügung: Sie können die Richtlinie „_Auto_ Tiering“ zum Tiering selten genutzter Datenblöcke in einem Schreib-Volume auf eine Kapazitäts-Tier verwenden. Die kalten Daten umfassen nicht nur Snapshot Kopien, sondern auch kalte Benutzerdaten aus dem aktiven Dateisystem.
+
+Wenn die Daten nach dem Zufallsprinzip gelesen werden, werden die kalten Datenblöcke in der Kapazitätsebene heiß und werden auf die Performance-Ebene verschoben. Beim Lesen von sequenziellen Lesevorgängen, z. B. in Verbindung mit Index- und Antivirenscans, bleiben die kalten Datenblöcke kalt und wechseln nicht zur Performance-Ebene.
+
+Sie können die Tiering-Richtlinie auswählen, wenn Sie ein Volume in Cloud Manager erstellen oder bearbeiten. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html["Dokumentation zu Cloud Manager"].
+
+
+
+== Daten-Tiering in Microsoft Azure
+
+Durch die Kombination einer Performance-Tier für häufig abgerufene Daten (Premium- oder Standard-gemanagte Festplatten) mit einer Kapazitäts-Tier für selten genutzte Daten (Azure Blob Storage) können Sie jetzt Ihre Azure Storage-Kosten senken. Zudem werden in Azure dieselben Tiering-Richtlinien unterstützt wie in AWS: auto, nur Snapshot und Backup.
+
+
+NOTE: Daten-Tiering wird nicht mit dem Typ der virtuellen DS3_v2-Maschine unterstützt.
+
+Sie können die Tiering-Richtlinie auswählen, wenn Sie ein Volume in Cloud Manager erstellen oder bearbeiten. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html["Dokumentation zu Cloud Manager"].
+
+
+
+== Daten-Tiering mit bereitgestellten IOPS SSDs
+
+Daten-Tiering wird jetzt in AWS mit über bereitgestellte IOPS SSDs unterstützt. Sie können diese SSDs als Performance-Tier für häufig abgerufene Daten verwenden. Amazon S3 als Kapazitäts-Tier für „kalte“ Daten.
+
+
+
+== Verbesserte Performance beim Tiering von Daten
+
+Die in den Versionen 9.2 und 9.3 eingeführte erweiterte Schreib-Performance wird nun durch Volumes unterstützt, die selten genutzte Daten auf eine Objektspeicher-Kapazitäts-Tier verschieben. Dies gilt für Volumes, die auf neuen SSD-Aggregaten in Cloud Volumes ONTAP 9.4 erstellt wurden.
+
+
+
+== Verbesserte Performance für mehrere Workloads in AWS
+
+Cloud Volumes ONTAP bietet jetzt eine zusätzliche Netzwerkbandbreite in AWS, wodurch die Performance für Systeme mit mehreren Workloads verbessert wird. Die zusätzliche Bandbreite ist für die folgenden EC2-Instanztypen verfügbar, wenn Sie ein Upgrade auf 9.4 durchführen und neue 9.4-Systeme einführen:
+
+* m4.xlarge
+* M4.2xlarge
+* M4.4xlarge
+* C4.4xlarge
+* C4.8xlarge
+
+
+
+
+== EC2-Instanztypen werden nicht mehr unterstützt
+
+Alle Versionen von Cloud Volumes ONTAP unterstützen nicht mehr mehrere EC2 Instanztypen. Vorhandene Systeme mit diesen Instanztypen arbeiten weiterhin normal. NetApp empfiehlt jedoch dringend, auf einen anderen Instanztyp zu ändern.
+
+Die Preisunterschiede zwischen Instanztypen und NetApp Lizenzen können Sie im AWS Marketplace für überprüfen http://aws.amazon.com/marketplace/pp/B011KEZ734["Single-Node-Systeme"^] Und für http://aws.amazon.com/marketplace/pp/B01H4LVJ84["HA-Paare"^].
+
+[cols="2*"]
+|===
+| Instanztyp wird nicht mehr unterstützt | Empfohlener Instanztyp 
+
+
+| C3.2xlarge | m4.xlarge 
+
+
+| C4.2xlarge | M4.2xlarge 
+
+
+| M3.xlarge | m4.xlarge 
+
+
+| M3.2xlarge | M4.2xlarge 
+
+
+| r3.xlarge | M4.2xlarge 
+
+
+| R3.2xlarge | R4.2xlarge 
+|===
+
+TIP: M3- und R3-Instanztypen werden nicht mit Daten-Tiering und verbesserter Performance unterstützt. Wenn Sie also auf die M4- und R4-Instanztypen umsteigen, können Sie diese Cloud Volumes ONTAP-Funktionen nutzen.
+
+
+
+== Upgrade-Hinweise
+
+* Upgrades von Cloud Volumes ONTAP müssen von Cloud Manager abgeschlossen werden. Sie sollten kein Cloud Volumes ONTAP-Upgrade mit System Manager oder der CLI durchführen. Dies kann die Stabilität des Systems beeinträchtigen.
+* Sie können ein Upgrade von Version 9.3 auf Cloud Volumes ONTAP 9.4 durchführen.
++
+Informationen zu Versionsanforderungen finden Sie unter http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-dot-upgrade/GUID-AC0EB781-583F-4C90-A4C4-BC7B14CEFD39.html["ONTAP 9 Dokumentation: Anforderungen für Cluster-Updates"^].
+
+* Das Upgrade eines einzelnen Node-Systems nimmt das System für bis zu 25 Minuten offline, während dieser I/O-Unterbrechung erfolgt.
+* Das Upgrade eines HA-Paars erfolgt unterbrechungsfrei und die I/O wird unterbrochen. Während dieses unterbrechungsfreien Upgrade-Prozesses wird jeder Node entsprechend aktualisiert, um den I/O-Datenverkehr für die Clients weiterhin bereitzustellen.
+

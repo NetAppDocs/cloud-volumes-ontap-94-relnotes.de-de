@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: reference-supported-configs.html 
+keywords: ec2, instance, type, vm, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations 
+summary: Cloud Volumes ONTAP ist in verschiedenen Konfigurationen in AWS und Azure erhältlich. 
+---
+= Unterstützte Konfigurationen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP ist in AWS und Azure in zwei Preisoptionen verfügbar: "Pay-as-you-go" und "Bring Your Own License" (Byol). Für „Pay-as-you-go“ haben Sie die Wahl zwischen drei Konfigurationen: Explore, Standard oder Premium.
+
+
+
+== Cloud Volumes ONTAP für AWS
+
+In AWS können Sie Cloud Volumes ONTAP als einzelnes System oder als HA-Paar implementieren.
+
+[cols="h,d,d,d,d"]
+|===
+|  | Entdecken | Standard | Premium | BYOL 
+
+
+| EC2 Instanztypen | m4.xlarge  a| 
+* M4.2xlarge
+* r4.xlarge
+
+ a| 
+* C4.4xlarge
+* C4.8xlarge
+* M4.4xlarge
+* R4.2xlarge
+
+ a| 
+* C4.4xlarge
+* C4.8xlarge
+* m4.xlarge
+* M4.2xlarge
+* M4.4xlarge
+* r4.xlarge
+* R4.2xlarge
+
+
+
+
+| Zugrunde liegender Storage 4+| Universell einsetzbare SSDs, bereitgestellte IOPS-SSDs, durchsatzoptimierte HDDs und kalte HDDs, bis zu 16 tib pro Festplatte 
+
+
+| Maximale Systemkapazität (Festplatten + Objekt-Storage) | 2 tib | 10 tib | 368 tib | 368 tib pro Lizenz 
+|===
+Hinweise:
+
+. Wenn Sie Data Tiering aktivieren, bleibt die Kapazitätsgrenze eines Systems gleich. Die Kapazitätsgrenze gilt sowohl für Festplatten als auch für Objekt-Storage.
+. Daten-Tiering wird mit Cloud Volumes ONTAP Standard, Premium und BYOL unterstützt.
+. Wenn Sie einen EC2-Instanztyp auswählen, können Sie angeben, ob es sich um eine freigegebene Instanz oder eine dedizierte Instanz handelt.
+. Eine verbesserte Schreib-Performance wird unterstützt, wenn EBS-SSDs mit Cloud Volumes ONTAP Standard, Premium und BYOL verwendet werden.
+. Informationen zu regionalen Support für AWS finden Sie unter https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes Regionen Weltweit"^].
+
+
+
+
+== Cloud Volumes ONTAP für Azure
+
+In Azure können Sie Cloud Volumes ONTAP als Single-Node-System implementieren.
+
+[cols="h,d,d,d,d"]
+|===
+|  | Entdecken | Standard | Premium | BYOL 
+
+
+| Typen von Virtual Machines | DS3_v2  a| 
+* DS4_v2
+* DS13_v2
+
+ a| 
+* DS5_v2
+* DS14_v2
+
+ a| 
+* DS3_v2
+* DS4_v2
+* DS5_v2
+* DS13_v2
+* DS14_v2
+
+
+
+
+| Zugrunde liegender Storage 4+| Standard-HDD-verwaltete Festplatten, Standard-SSD-verwaltete Festplatten und Premium-SSD-gemanagte Festplatten für bis zu 32 tib pro Festplatte 
+
+
+| Maximale Systemkapazität (Festplatten + Objekt-Storage) | 2 tib | 10 tib | 368 tib | 368 tib pro Lizenz 
+|===
+Hinweise:
+
+. Wenn Sie Data Tiering aktivieren, bleibt die Kapazitätsgrenze eines Systems gleich. Die Kapazitätsgrenze gilt sowohl für Festplatten als auch für Objekt-Storage.
+. Daten-Tiering wird nicht mit dem Typ der virtuellen DS3_v2-Maschine unterstützt.
+. Eine verbesserte Schreib-Performance ist bei Verwendung von Azure Premium Storage-Festplatten aktiviert, aber nicht bei Verwendung des Typs DS3_v2 Virtual Machine.
+. Informationen zur regionalen Unterstützung für Azure finden Sie unter https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volumes Regionen Weltweit"^].
+
