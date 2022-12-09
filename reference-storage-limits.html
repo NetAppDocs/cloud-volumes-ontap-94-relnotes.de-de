@@ -178,6 +178,13 @@
     <li>
       
       <a href="https://docs.netapp.com/de-de/cloud-volumes-ontap-relnotes/reference-storage-limits.html" target="_self">
+        <span translate="no" class="notranslate"><span>Cloud Volumes ONTAP</span><span class="version"> 9.12.1</span></span>
+      </a>
+                     
+    </li>
+    <li>
+      
+      <a href="https://docs.netapp.com/de-de/cloud-volumes-ontap-9111-relnotes/reference-storage-limits.html" target="_self">
         <span translate="no" class="notranslate"><span>Cloud Volumes ONTAP</span><span class="version"> 9.11.1</span></span>
       </a>
                      
@@ -620,7 +627,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:08:51 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 16:35:30 +0000">12/09/2022</time>
     
   
 
@@ -644,7 +651,7 @@
 <p>Die maximale Systemkapazität eines Cloud Volumes ONTAP-Systems wird durch seine Lizenz bestimmt. Die maximale Systemkapazität umfasst festplattenbasierten Storage sowie Objekt-Storage für Daten-Tiering. NetApp unterstützt das Übertreffen dieses Limits nicht.</p>
 </div>
 <div class="paragraph">
-<p>In Azure verhindern Festplatten-Limits, dass Sie das Kapazitätslimit von 368 tib erreichen, indem Sie nur Festplatten verwenden. In diesen Fällen können Sie das Kapazitätslimit von 368 tib erreichen <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html" target="_blank" rel="noopener">"tiering inaktiver Daten in Objektspeicher"</a>. Siehe  and disk limits by Azure VM size,Kapazitäts- und Festplattengrenzwerte für die Azure VM-Größe Entnehmen.</p>
+<p>In Azure verhindern Festplatten-Limits, dass Sie das Kapazitätslimit von 368 tib erreichen, indem Sie nur Festplatten verwenden. In diesen Fällen können Sie das Kapazitätslimit von 368 tib erreichen <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html" target="_blank" rel="noopener">"tiering inaktiver Daten in Objektspeicher"</a>. Siehe <a href="#kapazitäts-und-festplattengrenzwerte-für-die-azure-vm-größe">Kapazitäts- und Festplattengrenzwerte für die Azure VM-Größe</a> Entnehmen.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -677,9 +684,11 @@
 </tbody>
 </table>
 <div class="paragraph">
+<div class="title">Ist bei HA die Lizenzkapazitätsgrenze pro Node oder für das gesamte HA-Paar?</div>
 <p>Das Kapazitätslimit liegt für das gesamte HA-Paar. Er erfolgt nicht pro Node. Wenn Sie beispielsweise die Premium-Lizenz verwenden, können Sie bis zu 368 tib Kapazität zwischen beiden Nodes haben.</p>
 </div>
 <div class="paragraph">
+<div class="title">Werden bei einem HA-System in AWS die gespiegelten Daten mit dem Kapazitätslimit gezählt?</div>
 <p>Nein, das tut es nicht. Die Daten in einem AWS HA-Paar werden zwischen den Nodes synchron gespiegelt, sodass bei einem Ausfall die Daten verfügbar sind. Wenn Sie beispielsweise eine 8-tib-Festplatte auf Node A erwerben, weist Cloud Manager auf Node B auch eine 8-tib-Festplatte zu, die für gespiegelte Daten verwendet wird. Während 16 tib Kapazität bereitgestellt wurde, zählt nur 8 tib auf dem Lizenzlimit.</p>
 </div>
 </div>
@@ -789,7 +798,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maximale Anzahl der Datenfestplatten über alle Aggregate <sup>3</sup></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Abhängig von der VM-Größe.  and disk limits by Azure VM size,Siehe unten.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abhängig von der VM-Größe. <a href="#kapazitäts-und-festplattengrenzwerte-für-die-azure-vm-größe">Siehe unten</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>RAID Gruppen</strong></p></td>
