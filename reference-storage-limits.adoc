@@ -22,7 +22,7 @@ Cloud Volumes ONTAP verfügt über Einschränkungen bei der Storage-Konfiguratio
 
 Die maximale Systemkapazität eines Cloud Volumes ONTAP-Systems wird durch seine Lizenz bestimmt. Die maximale Systemkapazität umfasst festplattenbasierten Storage sowie Objekt-Storage für Daten-Tiering. NetApp unterstützt das Übertreffen dieses Limits nicht.
 
-In Azure verhindern Festplatten-Limits, dass Sie das Kapazitätslimit von 368 tib erreichen, indem Sie nur Festplatten verwenden. In diesen Fällen können Sie das Kapazitätslimit von 368 tib erreichen https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html["tiering inaktiver Daten in Objektspeicher"^]. Siehe  and disk limits by Azure VM size,Kapazitäts- und Festplattengrenzwerte für die Azure VM-Größe Entnehmen.
+In Azure verhindern Festplatten-Limits, dass Sie das Kapazitätslimit von 368 tib erreichen, indem Sie nur Festplatten verwenden. In diesen Fällen können Sie das Kapazitätslimit von 368 tib erreichen https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html["tiering inaktiver Daten in Objektspeicher"^]. Siehe <<Kapazitäts- und Festplattengrenzwerte für die Azure VM-Größe,Kapazitäts- und Festplattengrenzwerte für die Azure VM-Größe>> Entnehmen.
 
 [cols="30,70"]
 |===
@@ -40,8 +40,10 @@ In Azure verhindern Festplatten-Limits, dass Sie das Kapazitätslimit von 368 ti
 
 | BYOL | 368 tib pro Lizenz 
 |===
+.Ist bei HA die Lizenzkapazitätsgrenze pro Node oder für das gesamte HA-Paar?
 Das Kapazitätslimit liegt für das gesamte HA-Paar. Er erfolgt nicht pro Node. Wenn Sie beispielsweise die Premium-Lizenz verwenden, können Sie bis zu 368 tib Kapazität zwischen beiden Nodes haben.
 
+.Werden bei einem HA-System in AWS die gespiegelten Daten mit dem Kapazitätslimit gezählt?
 Nein, das tut es nicht. Die Daten in einem AWS HA-Paar werden zwischen den Nodes synchron gespiegelt, sodass bei einem Ausfall die Daten verfügbar sind. Wenn Sie beispielsweise eine 8-tib-Festplatte auf Node A erwerben, weist Cloud Manager auf Node B auch eine 8-tib-Festplatte zu, die für gespiegelte Daten verwendet wird. Während 16 tib Kapazität bereitgestellt wurde, zählt nur 8 tib auf dem Lizenzlimit.
 
 
@@ -101,7 +103,7 @@ Hinweise:
 | Maximale Festplattengröße | 32 tib 
 
 
-| Maximale Anzahl der Datenfestplatten über alle Aggregate ^3^ | Abhängig von der VM-Größe.  and disk limits by Azure VM size,Siehe unten. 
+| Maximale Anzahl der Datenfestplatten über alle Aggregate ^3^ | Abhängig von der VM-Größe. <<Kapazitäts- und Festplattengrenzwerte für die Azure VM-Größe,Siehe unten>>. 
 
 
 | *RAID Gruppen* | Die maximale Anzahl pro Aggregat | 1 

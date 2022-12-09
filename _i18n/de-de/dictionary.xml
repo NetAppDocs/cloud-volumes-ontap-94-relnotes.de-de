@@ -53,10 +53,6 @@
   <block id="602b56cc8e56a5daf341c7f6b5489c76" category="list-text">LUN-Verschiebung wird auf Systemen mit aktivierter Cloud Volumes ONTAP-Verschlüsselung nicht unterstützt.</block>
   <block id="ad36e2b4d23122ce393299ac3f5e4d18" category="list-text">Cloud Volumes ONTAP sendet Verschlüsselungen sogar für Aggregate, die nicht erstellt wurden, an Schlüsselmanager.</block>
   <block id="e6cd7708d37be14be1ec14b31818d9c9" category="paragraph">Sie müssen die Schlüssel manuell aus Schlüsselmanagern löschen.</block>
-  <block id="2d03060cc88d48d8c65d3a01864614ad" category="section-title">Bekannte Einschränkungen in Microsoft Azure</block>
-  <block id="d0e7588890233fc627c7bcaab1e75386" category="paragraph">Die folgenden bekannten Einschränkungen betreffen Cloud Volumes ONTAP in Azure.</block>
-  <block id="e4f5b6f59db7bfa0e08c02262ddbd654" category="section-title">CSP-Partner erhalten keine Pay-as-you-go-Lösung</block>
-  <block id="f2ff5834d93c258f0fc4ad6cf6a17942" category="paragraph">Als Microsoft Cloud Solution Provider (CSP)-Partner können Sie Cloud Volumes ONTAP Explore, Standard oder Premium nicht bereitstellen, da CSP-Partner keine Pay-as-you-go-Abonnements haben. Kunden müssen eine Lizenz erwerben und Cloud Volumes ONTAP BYOL implementieren.</block>
   <block id="b3dfe19c7d46d1f8795ac17bf3d5a909" category="summary">Cloud Volumes ONTAP verfügt über Einschränkungen bei der Storage-Konfiguration, um einen zuverlässigen Betrieb zu gewährleisten. Konfigurieren Sie das System nicht mit den Maximalwerten, um eine optimale Performance zu erzielen.</block>
   <block id="150a34e7bbdf7765066eae5fadb9f919" category="doc">Storage-Beschränkungen</block>
   <block id="ecedb9353641e4bd058af0268a6edce8" category="section-title">Maximale Systemkapazität nach Lizenz</block>
@@ -290,4 +286,6 @@
   <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">Alle Dokumentationen zum Cloud Manager</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="sidebar">Cloud Volumes ONTAP</block>
   <block id="dea335c9c6f638eb584011e253ad6ca1" category="sidebar">ONTAP Cloud</block>
+  <block id="2f9882645b2c32820ad085240bacb763" category="paragraph-title">Ist bei HA die Lizenzkapazitätsgrenze pro Node oder für das gesamte HA-Paar?</block>
+  <block id="fc9a388cd18c69244f22554de6f0d544" category="paragraph-title">Werden bei einem HA-System in AWS die gespiegelten Daten mit dem Kapazitätslimit gezählt?</block>
 </blocks>

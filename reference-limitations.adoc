@@ -126,15 +126,3 @@ Das Trennen eines EBS-Volumes von einer Cloud Volumes ONTAP-Instanz und das Wied
 Sie müssen die Schlüssel manuell aus Schlüsselmanagern löschen.
 
 
-
-
-
-== Bekannte Einschränkungen in Microsoft Azure
-
-Die folgenden bekannten Einschränkungen betreffen Cloud Volumes ONTAP in Azure.
-
-
-
-=== CSP-Partner erhalten keine Pay-as-you-go-Lösung
-
-Als Microsoft Cloud Solution Provider (CSP)-Partner können Sie Cloud Volumes ONTAP Explore, Standard oder Premium nicht bereitstellen, da CSP-Partner keine Pay-as-you-go-Abonnements haben. Kunden müssen eine Lizenz erwerben und Cloud Volumes ONTAP BYOL implementieren.
