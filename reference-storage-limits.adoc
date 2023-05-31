@@ -22,7 +22,7 @@ Cloud Volumes ONTAP verfügt über Einschränkungen bei der Storage-Konfiguratio
 
 Die maximale Systemkapazität eines Cloud Volumes ONTAP-Systems wird durch seine Lizenz bestimmt. Die maximale Systemkapazität umfasst festplattenbasierten Storage sowie Objekt-Storage für Daten-Tiering. NetApp unterstützt das Übertreffen dieses Limits nicht.
 
-In Azure verhindern Festplatten-Limits, dass Sie das Kapazitätslimit von 368 tib erreichen, indem Sie nur Festplatten verwenden. In diesen Fällen können Sie das Kapazitätslimit von 368 tib erreichen https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html["tiering inaktiver Daten in Objektspeicher"^]. Siehe <<Kapazitäts- und Festplattengrenzwerte für die Azure VM-Größe,Kapazitäts- und Festplattengrenzwerte für die Azure VM-Größe>> Entnehmen.
+In Azure verhindern Festplatten-Limits, dass Sie das Kapazitätslimit von 368 tib erreichen, indem Sie nur Festplatten verwenden. In diesen Fällen können Sie das Kapazitätslimit von 368 tib erreichen https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["tiering inaktiver Daten in Objektspeicher"^]. Siehe <<Kapazitäts- und Festplattengrenzwerte für die Azure VM-Größe,Kapazitäts- und Festplattengrenzwerte für die Azure VM-Größe>> Entnehmen.
 
 [cols="30,70"]
 |===

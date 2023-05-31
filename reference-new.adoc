@@ -17,7 +17,7 @@ summary: Neue Versionen von Cloud Volumes ONTAP führen neue Funktionen, Verbess
 Cloud Volumes ONTAP 9.4 enthält mehrere neue Funktionen und Verbesserungen.
 
 
-NOTE: Zusätzliche Funktionen und Verbesserungen sind auch in den neuesten Versionen von Cloud Manager eingeführt. Siehe https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Versionshinweise Zu Cloud Manager"^] Entsprechende Details.
+NOTE: Zusätzliche Funktionen und Verbesserungen sind auch in den neuesten Versionen von Cloud Manager eingeführt. Siehe https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html["Versionshinweise Zu Cloud Manager"^] Entsprechende Details.
 
 
 
@@ -37,7 +37,7 @@ Mit Cloud Volumes ONTAP 9.4 Premium und BYOL steht Ihnen nun eine dritte Option 
 
 Wenn die Daten nach dem Zufallsprinzip gelesen werden, werden die kalten Datenblöcke in der Kapazitätsebene heiß und werden auf die Performance-Ebene verschoben. Beim Lesen von sequenziellen Lesevorgängen, z. B. in Verbindung mit Index- und Antivirenscans, bleiben die kalten Datenblöcke kalt und wechseln nicht zur Performance-Ebene.
 
-Sie können die Tiering-Richtlinie auswählen, wenn Sie ein Volume in Cloud Manager erstellen oder bearbeiten. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html["Dokumentation zu Cloud Manager"].
+Sie können die Tiering-Richtlinie auswählen, wenn Sie ein Volume in Cloud Manager erstellen oder bearbeiten. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["Dokumentation zu Cloud Manager"].
 
 
 
@@ -48,7 +48,7 @@ Durch die Kombination einer Performance-Tier für häufig abgerufene Daten (Prem
 
 NOTE: Daten-Tiering wird nicht mit dem Typ der virtuellen DS3_v2-Maschine unterstützt.
 
-Sie können die Tiering-Richtlinie auswählen, wenn Sie ein Volume in Cloud Manager erstellen oder bearbeiten. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html["Dokumentation zu Cloud Manager"].
+Sie können die Tiering-Richtlinie auswählen, wenn Sie ein Volume in Cloud Manager erstellen oder bearbeiten. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["Dokumentation zu Cloud Manager"].
 
 
 
